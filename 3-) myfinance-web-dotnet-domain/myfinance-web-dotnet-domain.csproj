@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <RootNamespace>myfinance_web_dotnet_domain</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>myfinance_web_dotnet</RootNamespace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
 </Project>
