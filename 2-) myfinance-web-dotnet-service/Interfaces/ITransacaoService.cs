@@ -6,7 +6,7 @@ namespace myfinance_web_dotnet_service.Interfaces
     {
         void Cadastrar(Transacao Entidade);
         void Excluir (int Id);
-        List<PlanoConta> ListarRegistros();
-        PlanoConta RetornarRegistro(int Id);
+        List<Transacao> ListarRegistros();
+        Transacao RetornarRegistro(int Id);
     }
 }

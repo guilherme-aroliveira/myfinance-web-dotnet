@@ -9,9 +9,9 @@ namespace myfinance_web_dotnet_service
     {
         private readonly MyFinanceDbContext _dbContext;
 
-        public PlanoContaService(MyFinanceDbContext dbContext)
+        public PlanoContaService(MyFinanceDbContext dbContext) // Construtor
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext; // injeção de dependencia --> estrutura dentro da camada de infra
         } 
         public void Cadastrar(PlanoConta Entidade)
         {
@@ -19,18 +19,18 @@ namespace myfinance_web_dotnet_service
 
             if (Entidade.Id == null) 
             {
-                dbset.Add(Entidade);
+                dbset.Add(Entidade); // Insere um novo registro no banco
             }
             else {
-                dbset.Attach(Entidade);
-                _dbContext.Entry(Entidade).State = EntityState.Modified;
+                dbset.Attach(Entidade); // Trata o registro de um objeto (atualiza)
+                _dbContext.Entry(Entidade).State = EntityState.Modified; // Estado de modificação
             }
             _dbContext.SaveChanges();
         }
 
         public void Excluir(int Id)
         {
-            var PlanoConta = new PlanoConta() { Id = Id};
+            var PlanoConta = new PlanoConta() { Id = Id }; // objeto do tipo da entidade PlanoConta --> id a ser excluido 
             _dbContext.Attach(PlanoConta);
             _dbContext.Remove(PlanoConta);
             _dbContext.SaveChanges();
