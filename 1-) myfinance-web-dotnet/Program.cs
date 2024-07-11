@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using myfinance_web_dotnet_infra;
+using myfinance_web_dotnet_infra.Interfaces;
+using myfinance_web_dotnet_infra.Repositories;
 using myfinance_web_dotnet_service;
 using myfinance_web_dotnet_service.Interfaces;
 
@@ -22,6 +24,9 @@ builder.Services.AddDbContext<MyFinanceDbContext>(options => options.UseSqlServe
 // Serviços injetados nas Controllers
 builder.Services.AddScoped<IPlanoContaService, PlanoContaService>();
 builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+
+// Repositories
+builder.Services.AddScoped<IPlanoContaRepository, PlanoContaRepository>();
 
 var app = builder.Build();
 
