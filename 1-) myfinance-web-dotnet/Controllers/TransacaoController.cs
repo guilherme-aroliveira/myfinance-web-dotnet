@@ -57,7 +57,7 @@ namespace myfinance_web_dotnet.Controllers
         [Route("Cadastrar/{Id}")]
         public IActionResult Cadastrar(int? Id) 
         {
-            var ListaPlanoContas = new SelectList(_planoContaService.ListarRegistros(), "Id", "Descrição");
+            var ListaPlanoContas = new SelectList(_planoContaService.ListarRegistros(), "Id", "Descricao");
 
             var itemTransacao = new TransacaoModel() {
                 Data = DateTime.Now,

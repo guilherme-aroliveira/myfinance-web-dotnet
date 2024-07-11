@@ -9,14 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Variáveis para a string de conexão
-var server = builder.Configuration["DbServer"] ?? "localhost";
-var port = builder.Configuration["DbPort"] ?? "1143";
-var user = builder.Configuration["DbUser"] ?? "SA";
-var password = builder.Configuration["Password"] ?? "dockerSQLSERVER2017";
+var server = builder.Configuration["DbServer"] ?? "myserversqlserver.database.windows.net";
+var user = builder.Configuration["DbUser"] ?? "user";
+var password = builder.Configuration["Password"] ?? "vb4wt3FS4w&H^u";
 var database = builder.Configuration["Database"] ?? "myfinance";
 
 // String de conexão
-var connectionString = $"Server={server}, {port};Initial Catalog={database};User ID={user};Password={password}";
+var connectionString = $"Server={server};Database={database};User Id={user};Password={password}";
 
 builder.Services.AddDbContext<MyFinanceDbContext>(options => options.UseSqlServer(connectionString));
 
